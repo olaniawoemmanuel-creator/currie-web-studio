@@ -35,7 +35,7 @@
     We offer <strong>free consultations</strong> and <strong>fast replies</strong>.
   </p>
 
-  <form action="https://formspree.io/f/xblwjrzo" method="POST" data-fp-redirect="thank-you.html">
+  <form id="contact-form" action="https://formspree.io/f/xblwjrzo" method="POST">
     <label for="name">Your Name</label>
     <input id="name" type="text" name="name" placeholder="Enter your name" required>
 
@@ -43,7 +43,7 @@
     <input id="email" type="email" name="email" placeholder="Enter your email" required>
 
     <label for="whatsapp">Your WhatsApp Number</label>
-    <input id="whatsapp" type="tel" name="whatsapp" placeholder="+234 810 123 4567" required>
+    <input id="whatsapp" type="text" name="whatsapp" placeholder="Enter your WhatsApp number (optional)">
 
     <label for="message">Your Message</label>
     <textarea id="message" name="message" rows="6" placeholder="Tell us about your project..." required></textarea>
@@ -52,7 +52,7 @@
   </form>
 </section>
 
-<!-- WHATSAPP CONTACT & DEPOSIT -->
+<!-- WHATSAPP CONTACT -->
 <section class="section">
   <h2>Prefer WhatsApp?</h2>
   <p class="section-text">
@@ -63,9 +63,6 @@
 
   <div class="whatsapp-deposit">
     <h3>Make Your Deposit via WhatsApp</h3>
-    <p class="section-text">
-      Click the button below to send a pre-filled WhatsApp message to start your 50% deposit for your website project.
-    </p>
     <a href="https://wa.me/+2348109791179?text=Hi%20CURRIE%20Web%20Studio%2C%20I%20want%20to%20pay%2050%25%20deposit%20for%20my%20website%20project." 
        target="_blank" 
        class="btn-main">
@@ -93,16 +90,37 @@
   <p>© 2025 CURRIE Web Studio. All rights reserved.</p>
 </footer>
 
-<!-- JS FOR NAV TOGGLE -->
+<!-- JS FOR FORM HANDLING AND NAV TOGGLE -->
 <script>
+  // NAV TOGGLE
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
-
   if(navToggle && navLinks){
     navToggle.addEventListener('click', () => {
       navLinks.classList.toggle('active');
     });
   }
+
+  // FORMSPREE REDIRECT
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const response = await fetch(form.action, {
+      method: form.method,
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    });
+
+    if (response.ok) {
+      window.location.href = 'thank-you.html';
+    } else {
+      alert('Oops! There was a problem submitting your form.');
+    }
+  });
 </script>
 
 </body>
