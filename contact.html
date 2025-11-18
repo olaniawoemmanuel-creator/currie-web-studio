@@ -2,41 +2,34 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Contact CURRIE Web Studio | Get a Free Website Quote</title>
 
-  <!-- SEO Meta -->
+  <!-- SEO -->
   <meta name="description" content="Contact CURRIE Web Studio for modern website design, fast delivery, and professional web solutions. Send a message to get a free website quote today.">
   <meta name="keywords" content="contact web designer, website quote, hire web developer, web design Nigeria, professional website design">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <h1>CURRIE Web Studio</h1>
   <nav>
-    <nav>
-  <div class="nav-toggle" id="nav-toggle">
-    &#9776; <!-- hamburger icon -->
-  </div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="portfolio.html">Portfolio</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html" class="active">Contact</a>
+  </nav>
 </header>
 
-<!-- CONTACT FORM SECTION -->
+<!-- CONTACT FORM -->
 <section class="section">
   <h2>Contact Us</h2>
-  <p class="section-text center-text">
+  <p class="section-text">
     Ready to start your website? Have a question? Fill out the form below and we’ll respond as soon as possible.
     We offer <strong>free consultations</strong> and <strong>fast replies</strong>.
   </p>
@@ -55,26 +48,38 @@
   </form>
 </section>
 
-<!-- WHATSAPP CONTACT SECTION -->
-<section class="section center-text">
+<!-- WHATSAPP SECTION -->
+<section class="section">
   <h2>Prefer WhatsApp?</h2>
   <p class="section-text">
-    Many clients find WhatsApp faster and easier.<br>
-    <strong>Add your WhatsApp number here when you're ready.</strong>
+    Many clients find WhatsApp faster and easier.
+  </p>
+  <p class="section-text" style="text-align:center;">
+    <a href="https://wa.me/2348109791179?text=Hello!%20I%20am%20interested%20in%20your%20web%20design%20services." 
+       target="_blank" 
+       class="btn-main">
+       Message Us on WhatsApp
+    </a>
   </p>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <p>© 2025 CURRIE Web Studio. All rights reserved.</p>
 </footer>
+
+<!-- MOBILE NAV SCRIPT -->
 <script>
   const navToggle = document.getElementById('nav-toggle');
   const navLinks = document.getElementById('nav-links');
 
-  navToggle.addEventListener('click', () => {
-    navLinks.classList.toggle('active');
-  });
+  if(navToggle) {
+    navToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  }
 </script>
 
 </body>
 </html>
+
