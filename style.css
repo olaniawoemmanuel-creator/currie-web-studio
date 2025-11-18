@@ -14,14 +14,6 @@ body {
   line-height: 1.6;
 }
 
-.section-text {
-  text-align: center;
-  max-width: 750px;
-  margin: 0 auto 30px;
-  font-size: 17px;
-  color: #444;
-}
-
 /* =========================
    HEADER
 ========================= */
@@ -31,12 +23,14 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap; /* ensures nav wraps on smaller screens */
 }
 
 header h1 {
   color: #fff;
   font-size: 24px;
   font-weight: 700;
+  margin-bottom: 8px;
 }
 
 nav a {
@@ -47,17 +41,423 @@ nav a {
   transition: 0.3s ease;
 }
 
-nav a:hover {
-  opacity: 0.7;
-}
-
-nav a.active {
-  border-bottom: 2px solid #fff;
-  padding-bottom: 4px;
+nav a:hover, nav a.active {
+  opacity: 0.8;
 }
 
 /* =========================
    HERO SECTION
+========================= */
+.hero {
+  padding: 100px 20px;
+  text-align: center;
+  background: linear-gradient(to right, #0a3d91, #0f59c9);
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 36px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 16px;
+  margin-bottom: 25px;
+}
+
+.btn-main {
+  display: inline-block;
+  background-color: #fff;
+  color: #0a3d91;
+  padding: 12px 24px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: 16px;
+}
+
+.btn-main:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   SECTION UNIVERSAL
+========================= */
+.section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 25px;
+  color: #0a3d91;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.margin-top {
+  margin-top: 20px;
+}
+
+.section-text {
+  text-align: center;
+  max-width: 700px;
+  margin: auto;
+  font-size: 16px;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services-container, .services-preview {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-box, .preview-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.service-box:hover, .preview-box:hover {
+  transform: translateY(-3px);
+}
+
+.service-box h3, .preview-box h3 {
+  color: #0a3d91;
+  margin-bottom: 10px;
+  font-size: 18px;
+}
+
+.service-box p, .preview-box p {
+  font-size: 14px;
+}
+
+/* =========================
+   PRICING
+========================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.pricing-card {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(10,61,145,0.08);
+}
+
+.pricing-card.featured {
+  transform: scale(1.03);
+  border: 2px solid #0a3d91;
+}
+
+.price {
+  font-size: 22px;
+  margin: 10px 0 15px;
+  color: #0a3d91;
+  font-weight: bold;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 15px;
+}
+
+.features li {
+  padding: 8px 0;
+  border-top: 1px solid #eee;
+}
+
+/* =========================
+   ADDONS
+========================= */
+.addons-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.addon {
+  background: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.06);
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+  max-width: 500px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+button {
+  width: 100%;
+  background: #0a3d91;
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   PORTFOLIO GRID
+========================= */
+.portfolio-grid, .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+}
+
+.project h3 {
+  font-size: 18px;
+  color: #0a3d91;
+  margin-bottom: 10px;
+}
+
+.project p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #0a3d91;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    margin: 5px 10px;
+  }
+
+  .hero h2 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .btn-main {
+    font-size: 15px;
+    padding: 10px 20px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .service-box, .preview-box, .pricing-card, .project {
+    padding: 15px;
+  }
+
+  .features li {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h2 {
+    font-size: 22px;
+  }
+
+  .section h2 {
+    font-size: 20px;
+  }
+
+  .btn-main {
+    font-size: 14px;
+    padding: 8px 18px;
+  }
+
+  header h1 {
+    font-size: 20px;
+  }
+}
+/* =========================
+   HERO BUTTON & CENTERING
+========================= */
+.hero, .section.center-text {
+  text-align: center;
+}
+
+.hero .btn-main, .section.center-text .btn-main {
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  /* Make hero button full-width */
+  .hero .btn-main {
+    display: block;
+    width: 80%;
+    margin: 20px auto 0 auto;
+    padding: 14px 0;
+  }
+
+  /* Make section CTA buttons full-width */
+  .section.center-text .btn-main {
+    display: block;
+    width: 80%;
+    margin: 15px auto 0 auto;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Further tweak buttons for very small screens */
+  .hero .btn-main, .section.center-text .btn-main {
+    width: 90%;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}
+/* =========================
+   PORTFOLIO BUTTONS
+========================= */
+.portfolio-grid .btn-main {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 12px 26px;
+  border-radius: 6px;
+  text-decoration: none;
+  background-color: #0a3d91;
+  color: #fff;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.portfolio-grid .btn-main:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 768px) {
+  /* Make portfolio buttons full-width on mobile */
+  .portfolio-grid .btn-main {
+    display: block;
+    width: 80%;
+    margin: 15px auto 0 auto;
+    padding: 14px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-grid .btn-main {
+    width: 90%;
+    font-size: 15px;
+    padding: 12px 0;
+  }
+}
+/* =========================
+   PORTFOLIO GRID
+========================= */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.portfolio-grid .project {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.portfolio-grid .project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.portfolio-grid .project h3 {
+  color: #0a3d91;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.portfolio-grid .project p {
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .portfolio-grid {
+    grid-template-columns: 1fr; /* Single column for tablets and small screens */
+    gap: 20px;
+  }
+}
+/* =========================
+   HERO SECTION RESPONSIVE
 ========================= */
 .hero {
   padding: 120px 40px;
@@ -77,207 +477,171 @@ nav a.active {
   margin-bottom: 25px;
 }
 
-.btn-main {
-  display: inline-block;
-  background-color: #fff;
-  color: #0a3d91;
-  padding: 12px 26px;
-  font-weight: bold;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: 0.3s ease;
+/* Responsive adjustments for hero */
+@media (max-width: 1024px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+  .hero p {
+    font-size: 16px;
+  }
 }
 
-.btn-main:hover {
-  opacity: 0.8;
-}
-
-/* =========================
-   SECTION UNIVERSAL
-========================= */
-.section {
-  padding: 70px 40px;
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 35px;
-  color: #0a3d91;
-  font-weight: 700;
+@media (max-width: 768px) {
+  .hero {
+    padding: 80px 20px;
+  }
+  .hero h2 {
+    font-size: 28px;
+  }
+  .hero p {
+    font-size: 15px;
+  }
+  .btn-main {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
 }
 
 /* =========================
-   SERVICES
+   SERVICES SECTION RESPONSIVE
 ========================= */
 .services-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 28px;
+  margin-top: 30px;
 }
 
-.service-box {
-  background: #fff;
-  padding: 28px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transition: 0.3s ease;
+/* Service box adjustments for small screens */
+@media (max-width: 768px) {
+  .services-container {
+    grid-template-columns: 1fr; /* stack services vertically */
+    gap: 20px;
+  }
+  .service-box {
+    padding: 20px;
+  }
 }
-
-.service-box:hover {
-  transform: translateY(-4px);
-}
-
-.service-box h3 {
-  color: #0a3d91;
-  margin-bottom: 10px;
-  font-size: 20px;
-}
-
-.service-box p {
-  font-size: 15px;
-  color: #555;
-}
-
 /* =========================
-   PRICING
+   PRICING SECTION RESPONSIVE
 ========================= */
-.pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 24px;
+@media (max-width: 1024px) {
+  .pricing-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+  }
 }
 
-.pricing-card {
-  background: white;
-  padding: 26px;
-  border-radius: 8px;
-  text-align: center;
-  box-shadow: 0 6px 18px rgba(10,61,145,0.08);
-}
-
-.pricing-card.featured {
-  transform: scale(1.03);
-  border: 2px solid #0a3d91;
-}
-
-.price {
-  font-size: 24px;
-  margin: 10px 0 18px;
-  color: #0a3d91;
-  font-weight: bold;
-}
-
-.features {
-  list-style: none;
-  padding: 0;
-  margin-bottom: 18px;
-}
-
-.features li {
-  padding: 10px 0;
-  border-top: 1px solid #eee;
-}
-
-/* =========================
-   CONTACT FORM
-========================= */
-form {
-  max-width: 600px;
-  margin: auto;
-  background: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-}
-
-label {
-  font-weight: bold;
-  margin-bottom: 6px;
-  display: block;
-  color: #333;
-}
-
-input, textarea {
-  width: 100%;
-  padding: 12px;
-  margin-bottom: 18px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 15px;
-}
-
-button {
-  background: #0a3d91;
-  border: none;
-  color: white;
-  padding: 12px 20px;
-  font-size: 16px;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s ease;
-  font-weight: bold;
-}
-
-button:hover {
-  opacity: 0.85;
-}
-
-/* =========================
-   BACK TO PORTFOLIO BUTTON
-========================= */
-.back-btn {
-  display: inline-block;
-  margin-top: 18px;
-  background: #333;
-  color: #fff;
-  padding: 10px 18px;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: 0.3s ease;
-}
-
-.back-btn:hover {
-  opacity: 0.8;
-}
-
-/* =========================
-   FOOTER
-========================= */
-footer {
-  background-color: #0a3d91;
-  color: white;
-  text-align: center;
-  padding: 22px;
-  margin-top: 40px;
-  font-size: 15px;
-}
-
-/* =========================
-   RESPONSIVE
-========================= */
-@media (max-width: 600px) {
-
-  header {
-    padding: 14px 20px;
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr; /* stack pricing cards vertically */
+    gap: 18px;
   }
 
-  nav a {
-    margin-left: 12px;
+  .pricing-card {
+    padding: 20px;
+  }
+
+  .price {
+    font-size: 20px;
+  }
+
+  .features li {
     font-size: 14px;
   }
 
-  .hero {
-    padding: 80px 20px;
+  .btn-main {
+    font-size: 14px;
+    padding: 10px 20px;
   }
 
-  .hero h2 {
-    font-size: 34px;
+  .addons-grid {
+    grid-template-columns: 1fr; /* stack add-ons vertically */
+    gap: 12px;
   }
 
-  .section {
-    padding: 50px 20px;
+  .addon p {
+    font-size: 14px;
+  }
+}
+
+/* =========================
+   CONTACT SECTION RESPONSIVE
+========================= */
+@media (max-width: 768px) {
+  form {
+    padding: 20px;
+  }
+
+  input, textarea {
+    padding: 10px;
+  }
+
+  button {
+    padding: 10px 18px;
+    font-size: 14px;
+  }
+
+  .section-text {
+    font-size: 15px;
+  }
+}
+/* =========================
+   MOBILE NAVIGATION
+========================= */
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  opacity: 0.7;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 65px; /* below header */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #0a3d91;
+    display: none; /* hidden by default */
+  }
+
+  .nav-links li {
+    margin: 15px 0;
+    text-align: center;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links.active {
+    display: flex; /* show menu when toggled */
   }
 }

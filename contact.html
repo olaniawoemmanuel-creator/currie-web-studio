@@ -18,12 +18,19 @@
 <header>
   <h1>CURRIE Web Studio</h1>
   <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
-    <a href="contact.html" class="active">Contact</a>
-  </nav>
+    <nav>
+  <div class="nav-toggle" id="nav-toggle">
+    &#9776; <!-- hamburger icon -->
+  </div>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="portfolio.html">Portfolio</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
 </header>
 
 <!-- CONTACT FORM SECTION -->
@@ -60,6 +67,14 @@
 <footer>
   <p>© 2025 CURRIE Web Studio. All rights reserved.</p>
 </footer>
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  navToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
 
 </body>
 </html>
