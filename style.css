@@ -1,0 +1,283 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+.section-text {
+  text-align: center;
+  max-width: 750px;
+  margin: 0 auto 30px;
+  font-size: 17px;
+  color: #444;
+}
+
+/* =========================
+   HEADER
+========================= */
+header {
+  background-color: #0a3d91;
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  margin-left: 25px;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
+}
+
+nav a.active {
+  border-bottom: 2px solid #fff;
+  padding-bottom: 4px;
+}
+
+/* =========================
+   HERO SECTION
+========================= */
+.hero {
+  padding: 120px 40px;
+  text-align: center;
+  background: linear-gradient(to right, #0a3d91, #0f59c9);
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 44px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 25px;
+}
+
+.btn-main {
+  display: inline-block;
+  background-color: #fff;
+  color: #0a3d91;
+  padding: 12px 26px;
+  font-weight: bold;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn-main:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   SECTION UNIVERSAL
+========================= */
+.section {
+  padding: 70px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.section h2 {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 35px;
+  color: #0a3d91;
+  font-weight: 700;
+}
+
+/* =========================
+   SERVICES
+========================= */
+.services-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+}
+
+.service-box {
+  background: #fff;
+  padding: 28px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-4px);
+}
+
+.service-box h3 {
+  color: #0a3d91;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.service-box p {
+  font-size: 15px;
+  color: #555;
+}
+
+/* =========================
+   PRICING
+========================= */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.pricing-card {
+  background: white;
+  padding: 26px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(10,61,145,0.08);
+}
+
+.pricing-card.featured {
+  transform: scale(1.03);
+  border: 2px solid #0a3d91;
+}
+
+.price {
+  font-size: 24px;
+  margin: 10px 0 18px;
+  color: #0a3d91;
+  font-weight: bold;
+}
+
+.features {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 18px;
+}
+
+.features li {
+  padding: 10px 0;
+  border-top: 1px solid #eee;
+}
+
+/* =========================
+   CONTACT FORM
+========================= */
+form {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 6px;
+  display: block;
+  color: #333;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+}
+
+button {
+  background: #0a3d91;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  opacity: 0.85;
+}
+
+/* =========================
+   BACK TO PORTFOLIO BUTTON
+========================= */
+.back-btn {
+  display: inline-block;
+  margin-top: 18px;
+  background: #333;
+  color: #fff;
+  padding: 10px 18px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  opacity: 0.8;
+}
+
+/* =========================
+   FOOTER
+========================= */
+footer {
+  background-color: #0a3d91;
+  color: white;
+  text-align: center;
+  padding: 22px;
+  margin-top: 40px;
+  font-size: 15px;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 600px) {
+
+  header {
+    padding: 14px 20px;
+  }
+
+  nav a {
+    margin-left: 12px;
+    font-size: 14px;
+  }
+
+  .hero {
+    padding: 80px 20px;
+  }
+
+  .hero h2 {
+    font-size: 34px;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+}
