@@ -1,0 +1,3 @@
+Sitemap: https://olaniawoemmanuel-creator.github.io/currie-web-studio/sitemap.xml
+User-agent: *
+Disallow:
